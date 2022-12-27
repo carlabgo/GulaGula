@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Calibri';
+}
+
+
+.img-thumbnail{
+    width: 500px;
+    height:300px;
+    object-fit: contain;
+}
+.container{
+    align-content: center;
+    text-align: center;
+}
+.alinear{
+    display:flex;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+
+}
+.container h1{
+    color:#f69a29;
+    text-decoration: underline;
+}
+.container h5{
+    color:#3f6533;
+}

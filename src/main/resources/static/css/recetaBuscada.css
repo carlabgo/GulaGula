@@ -1,0 +1,16 @@
+body{
+    font-family: 'Calibri';
+}
+.otra-lista h4{
+    font-size:50px;
+    text-decoration: underline;
+    color:#f69a29;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+.td-nombre{
+    text-decoration: underline;
+    font-size:20px;
+    color:#f69a29;
+    font-weight: 900;
+}

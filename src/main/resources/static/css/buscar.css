@@ -1,0 +1,31 @@
+html,body{ 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.div_contenedor{
+
+    height: 100%;
+}
+
+.div_centrado{
+
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    width: 1000px;       
+    height: 500px;
+    position: absolute;
+    bottom: 0;
+    right: 35%;
+    margin-right: -500px;
+    left: 35%;
+}
+
+.div_centrado p{
+    align-items: center;
+    font-size: 30px;
+}
+
+

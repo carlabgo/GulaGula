@@ -1,0 +1,43 @@
+<nav th:fragment="navbarsinlogo" >
+
+
+    <nav class="nav p-1 justify-content-center py-0" height="20px"style="background-color: #fbce45; font-family: Calibri, sans-serif" >
+        <div class="container">
+            <div class="nav justify-content-left">
+                <a href="/" class="d-flex mb-4 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+
+
+                <ul class="nav justify-content-left col-12 col-lg-auto me-lg-auto mb-2 ">
+                    <li><a class="nav-link px-1 text-white" th:href="@{/}" >Principal</a></li>
+                    <li><a class="nav-link px-1 text-white" th:href="@{/receta}">Recetas</a></li>
+                    <li><a class="nav-link px-1 text-white" th:if="${session.usuariosession != null}" th:href="@{/receta/form}">Crear Receta</a></li>
+                    <li><a sec:authorize="hasAnyRole('ADMIN')" class="nav-link px-1 text-white" th:if="${session.usuariosession != null}" th:href="@{/usuario}">Usuarios</a>
+                    <li><a sec:authorize="hasAnyRole('ADMIN')" class="nav-link px-1 text-white" th:if="${session.usuariosession != null}" th:href="@{/ingrediente}">Ingredientes</a>
+                    <li><a class="nav-link px-1 text-white" th:if="${session.usuariosession != null}" th:href="@{/ingrediente/form}">Cargar ingredientes</a>
+                        </div>
+                        </div>
+                        <div class="nav justify-content-right col-12 col-lg-auto me-lg-auto mb-2 ">
+                            <ul class="nav justify-content-right col-12 col-lg-auto me-lg-auto mb-2 ">
+                                <li><a class="nav-link px-1 ml-10 text-white align-items-right" th:if="${session.usuariosession == null}" th:href="@{/login}">Ingresar</a></li>
+                                <!-- Si el usuario de sesion es NULO crea un link al index en su seccion registro -->
+                                <li><a class="nav-link px-1  ml-10 text-white align-items-right" th:if="${session.usuariosession == null}" th:href="@{/registro}">Registrarse</a></li>               
+                                <!-- Si el usuario de sesion es DISTINTO DE NULO mostrar nombre y apellido y
+                                crear vinculo que redirija a /usuario/editar-perfil llevando el id del usuario de sesion --> 
+                                <li>
+                                    <a class="nav-link px-1 text-white align-items-right" th:if="${session.usuariosession != null}"
+
+                                       th:text="${'Hola ' + session.usuariosession.nombre + '!'}">
+                                    </a>
+                                </li>
+                                <!-- Si el usuario de sesion es DISTINTO de NULO muestra imagen user2.png a un 25% de tamaño -->
+                                <!-- <li class="nav-item" th:if="${session.usuariosession != null}"><br><img src="img/user2.png" width="25"></li> -->
+                                <!-- Si el usuario de sesion es DISTINTO de NULO muestra el logout "Salir" -->
+                                <li><a class="nav-link px-2 text-white" th:if="${session.usuariosession != null}" href="/logout">Salir</a></li>
+                            </ul>
+                        </div>
+                </ul>
+
+
+                </nav>
